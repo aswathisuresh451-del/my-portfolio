@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aswathi Suresh | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary: #00d4ff;    /* Electric Blue */
+            --secondary: #6e45e2;  /* Deep Purple */
+            --bg-dark: #0f172a;    /* Midnight Blue */
+            --text-main: #f4f4f4;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth; /* Makes clicking links slide smoothly */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(110, 69, 226, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(0, 212, 255, 0.15) 0px, transparent 50%);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* Glassmorphism Cards */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, var(--secondary), transparent);
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px -10px rgba(0, 212, 255, 0.2);
+        }
+
+        /* Skills Styling */
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 10px;
+            padding: 8px 15px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .skill-list li strong {
+            color: var(--primary);
+        }
+
+        /* Buttons & Links */
+        .btn-outline {
+            text-decoration: none;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--bg-dark);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-list a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* Subtle Animation for Background */
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.5; }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--secondary);
+            filter: blur(100px);
+            z-index: -1;
+            animation: pulse 8s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Aswathy Suresh</h1>
+            <p class="subtitle">Computer Science & Engineering Student | Aspiring Software Developer | AI Enthusiast</p>
+            <a href="#connect" class="btn-outline">Get In Touch</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2 class="section-title">🔮About Me</h2>
+            <div class="card">
+                <p>I am a dedicated Computer Science and Engineering student at <strong>Nehru College of Engineering and Research Centre (NCERC)</strong> with a deep interest in building scalable software and intelligent systems. I specialize in bridging the gap between traditional software development and modern Artificial Intelligence.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">🛠️ Technical Skills</h2>
+            <div class="card">
+                <div class="skill-category">
+                    <h3>Core Programming & Development</h3>
+                    <ul class="skill-list">
+                        <li><strong>Languages:</strong> Python, Java, C</li>
+                        <li><strong>Web:</strong> HTML5, CSS3, JavaScript</li>
+                        <li><strong>Databases:</strong> SQL (MySQL/PostgreSQL), NoSQL</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">📍Education</h2>
+            <div class="card">
+                <h3>Nehru College of Engineering and Research Centre</h3>
+                <p style="color: var(--primary);">Pampady, Kerala</p>
+                <p>B.Tech in Computer Science Engineering</p>
+            </div>
+        </section>
+
+        <section id="connect">
+            <h2 class="section-title">🔗 Let's Connect</h2>
+            <div class="card">
+                <ul class="contact-list">
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aswathi-suresh-a97375377?" target="_blank">view profile</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/aswathisuresh451-del" target="_blank">github.com/aswathisuresh451-del</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:aswathisuresh451@gmail .com">aswathisuresh451@gmail.com/<a></li>
+                    <li><strong>Location:</strong> Palakkad, Kerala, India</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aswathy Suresh. Built with HTML & CSS .</p>
+    </footer>
+
+</body>
+</html>
